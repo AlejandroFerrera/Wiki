@@ -1,4 +1,3 @@
-from http.client import HTTPResponse
 from django.shortcuts import render, redirect
 from markdown2 import Markdown
 from . import util
@@ -25,3 +24,18 @@ def page(request, title):
 
 def not_found(request):
     return render(request, 'encyclopedia/not-found.html')
+
+
+def search(request):
+    q = request.POST.get('q').lower()
+    entries = util.list_entries()
+
+    matches = []
+
+    for entry in entries:
+        if q == entry.lower():
+            return redirect('page', q)
+        if q in entry.lower():
+            matches.append(entry)
+
+    return render(request, 'encyclopedia/search.html', {'matches': matches})
