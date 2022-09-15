@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    background-color: white;
+}
+
+/* code {
+    white-space: pre;
+} */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 520;
+    padding-top: 4px;
+}
+
+.logo .wiki-logo {
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+}
+
+h1 {
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+textarea {
+    height: 90vh;
+    width: 80%;
+}
+
+.main {
+    padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form .search input[type="text"] {
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    padding: 8px;
+}
+
+.search {
+    margin-bottom: 30px;
+}
+
+.sidebar {
+    background-color: #f0f0f0;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 5px;
+}
+
+.nav-item {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin: 15px 25px;
+
+}
+
+.nav-item img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.nav-item p {
+    margin-bottom: 0;
+}
+
+.new-page-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-page-form .page-title{
+    font-size: 20px;
+}
+
+.new-page-form textarea{
+    height: 50vh;
+    font-size: 20px;
+}
