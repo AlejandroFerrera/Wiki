@@ -1,18 +1,27 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    Search
+Search
 {% endblock %}
 
 {% block body %}
 
-    <h1>Searh results</h1>
+<h1>Searh results</h1>
 
-    <ul>
+<ul>
+
+    {% if matches %}
         {% for entry in matches %}
-            <a href="{% url 'page' entry %}"><li>{{ entry }}</li></a>
+            <a href="{% url 'page' entry %}">
+                <li>{{ entry }}</li>
+            </a>
         {% endfor %}
-    </ul>
+
+    {% else %}
+        <li>No results for that search</li>
+    {% endif %}
+
+</ul>
 
 
 {% endblock %}
