@@ -1,3 +1,6 @@
-# Python
-
-Python is a programming language that can be used both for writing **command-line scripts** or building **web applications**.
+## Python is my favorite language
+
+
+
+I love this wikipedia version coded in django
+

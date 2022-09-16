@@ -2,7 +2,7 @@ from cProfile import label
 from django.shortcuts import render, redirect
 from markdown2 import Markdown
 from . import util
-from django import forms
+from django.contrib import messages
   
 
 def index(request):
@@ -45,9 +45,30 @@ def new_page(request):
     if request.method == "POST":
         title = request.POST.get('page-title')
         content = request.POST.get('content')
+        entries_lower_case = [entry.lower() for entry in util.list_entries()]
+
+        if title.lower() in entries_lower_case:
+            messages.error(request, "That entry already exists")
+            return render(request, 'encyclopedia/new-page.html')
 
         util.save_entry(title, content)
 
         return redirect('page', title)
 
     return render(request, 'encyclopedia/new-page.html')
+
+def edit_page(request, title):
+
+    if request.method == "POST":
+        content = request.POST.get('content')
+        util.save_entry(title, content)
+        return redirect('page', title)
+
+    entry = util.get_entry(title)
+
+    if entry:
+        return render(request, 'encyclopedia/edit-page.html', {'title': title, 'entry': entry })  
+    
+    return redirect('not_found')
+
+
