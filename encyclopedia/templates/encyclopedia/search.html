@@ -6,22 +6,23 @@ Search
 
 {% block body %}
 
-<h1>Searh results</h1>
+<h1 class="text-center">Searh results</h1>
 
-<ul>
+<main class="entries-container">
 
-    {% if matches %}
-        {% for entry in matches %}
-            <a href="{% url 'page' entry %}">
-                <li>{{ entry }}</li>
-            </a>
-        {% endfor %}
+    <ul>
 
-    {% else %}
-        <li>No results for that search</li>
-    {% endif %}
+        {% if matches %}
+            {% for entry in matches %}
+                <a href="{% url 'page' entry %}">{{ entry }}</a>
+            {% endfor %}
 
-</ul>
+        {% else %}
+            <li>No results for that search</li>
+        {% endif %}
+
+    </ul>
+</main>
 
 
 {% endblock %}

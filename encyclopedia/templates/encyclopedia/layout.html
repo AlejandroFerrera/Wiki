@@ -24,18 +24,18 @@
                     <input type="text" name="q" placeholder="Search Encyclopedia">
                 </div>
             </form>
-            <div class="nav-item">
+            <a href="{% url 'index' %}" class="nav-item">
                 <img src="{% static 'encyclopedia/img/house-solid.svg' %}" alt="home-icon">
-                <a href="{% url 'index' %}">Home</a>
-            </div>
-            <div class="nav-item">
+                <span>Home</span>
+            </a>
+            <a href="{% url 'new-page' %}" class="nav-item">
                 <img src="{% static 'encyclopedia/img/plus-solid.svg' %}" alt="plus-icon">
-                <a href="{% url 'new-page' %}">Create New Page</a> 
-            </div>
-            <div class="nav-item">
+                <span>Create New Page</span> 
+            </a>
+            <a href="{% url 'random-page' %}" class="nav-item">
                 <img src="{% static 'encyclopedia/img/shuffle-solid.svg' %}" alt="random-icon">
-                <a href="{% url 'random-page' %}">Random page</a> 
-            </div>
+                <span >Random page</span> 
+            </a>
             {% block nav %}
             {% endblock %}
         </div>
