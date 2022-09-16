@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from markdown2 import Markdown
 from . import util
 from django.contrib import messages
+import random
   
 
 def index(request):
@@ -71,4 +72,6 @@ def edit_page(request, title):
     
     return redirect('not_found')
 
-
+def random_page(request):
+    random_entry = random.choice(util.list_entries())
+    return redirect('page', random_entry)

@@ -34,7 +34,7 @@
             </div>
             <div class="nav-item">
                 <img src="{% static 'encyclopedia/img/shuffle-solid.svg' %}" alt="random-icon">
-                <p>Random Page</p> 
+                <a href="{% url 'random-page' %}">Random page</a> 
             </div>
             {% block nav %}
             {% endblock %}
