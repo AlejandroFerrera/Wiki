@@ -6,11 +6,11 @@
 
 {% block body %}
 
-    <h1>Here you can edit {{ title }} page content</h1>
-    <form method="POST">
+    <h1 class="page-heading">Edit {{ title }} page content.</h1>
+    <form class="new-page-form w-75 mx-auto m-4" method="POST">
         {% csrf_token %}
-        <textarea name="content" id="content">{{ entry }}</textarea>
-        <input type="submit">
+        <textarea class="form-control mb-3" name="content" id="content" cols="70" rows="15">{{ entry }}</textarea>
+        <input class="btn btn-info w-25" type="submit" value="Save page">
     </form>
 
 {% endblock %}

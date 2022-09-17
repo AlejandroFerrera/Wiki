@@ -21,10 +21,10 @@ def page(request, title):
         entry = markdowner.convert(entry)
         return render(request, 'encyclopedia/page.html', {'title': title, 'entry': entry })  
     
-    return redirect('not_found')
+    return redirect('not_found', title)
 
-def not_found(request):
-    return render(request, 'encyclopedia/not-found.html')
+def not_found(request, title):
+    return render(request, 'encyclopedia/not-found.html', {'title': title})
 
 
 def search(request):

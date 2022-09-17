@@ -5,24 +5,22 @@ Encyclopedia
 {% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Create page</h1>
+<h1 class="page-heading">Create page</h1>
 
-    <form class="new-page-form" method="POST">
-        {% csrf_token %}
-        <label for="page-title">Page title:</label>
-        <input type="text" name="page-title" class="page-title" placeholder="Title">
-        <label for="content">Content:</label>
-        <textarea name="content" id="content" cols="30" rows="8"></textarea>
+<form class="new-page-form w-75 mx-auto m-4" method="POST">
+    {% csrf_token %}
+        <input class="form-control form-control-lg m-4" type="text" name="page-title" class="page-title" placeholder="Title">
+        <textarea class="form-control mb-1" name="content" id="content" cols="70" rows="8" placeholder="###Your markdown text"></textarea>
+        <small class="mb-4">If you don't know how markdown works, here is a <a href="https://www.markdownguide.org/">guide</a>. </small>
+        <input class="btn btn-info w-25" type="submit" value="Save page">
+</form>
 
-        <input type="submit">
-    </form>
-
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                {% endfor %}
-        </ul>
-    {% endif %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+{% endif %}
 
 {% endblock %}
