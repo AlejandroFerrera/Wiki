@@ -8,14 +8,14 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="{% static 'encyclopedia/css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
 </head>
 
 <body>
     <div class="row">
         <div class="sidebar col-lg-2 col-md-3">
             <div class="logo">
-                <img class="wiki-logo" src="{% static 'encyclopedia/img/wiki-logo.png' %}" alt="wiki-logo">
+                <img class="wiki-logo" src="{% static 'encyclopedia/wiki-logo.png' %}" alt="wiki-logo">
                 <h2>Wikipedia</h2>
             </div>
             <form action="{% url 'search' %}" method="post">
@@ -25,15 +25,15 @@
                 </div>
             </form>
             <a href="{% url 'index' %}" class="nav-item">
-                <img src="{% static 'encyclopedia/img/house-solid.svg' %}" alt="home-icon">
+                <img src="{% static 'encyclopedia/house-solid.svg' %}" alt="home-icon">
                 <span>Home</span>
             </a>
             <a href="{% url 'new-page' %}" class="nav-item">
-                <img src="{% static 'encyclopedia/img/plus-solid.svg' %}" alt="plus-icon">
+                <img src="{% static 'encyclopedia/plus-solid.svg' %}" alt="plus-icon">
                 <span>Create New Page</span> 
             </a>
             <a href="{% url 'random-page' %}" class="nav-item">
-                <img src="{% static 'encyclopedia/img/shuffle-solid.svg' %}" alt="random-icon">
+                <img src="{% static 'encyclopedia/shuffle-solid.svg' %}" alt="random-icon">
                 <span >Random page</span> 
             </a>
             {% block nav %}
